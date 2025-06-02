@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сервис сокращения URL</title>
+</head>
+<body>
+    <h1>Сократите свой URL</h1>
+    <form action="/shorten" method="post">
+        <input type="text" name="url" placeholder="Введите URL..." required size="50">
+        <button type="submit">Сократить</button>
+    </form>
+
+    <h2>Все сокращённые ссылки</h2>
+    <ul>
+        {% for url in urls %}
+            <li>
+                <a href="/{{ url.short_id }}" target="_blank">http://localhost:8080/{{ url.short_id }}</a>
+                → {{ url.original_url }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
