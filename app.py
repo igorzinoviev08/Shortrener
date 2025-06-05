@@ -83,8 +83,6 @@ async def redirect_url(request):
         return web.Response(text="URL не найден", status=404)
     return web.Response(status=307, headers={"Location": original_url})
 
-
-
 # API: получить все URL в формате JSON
 async def api_get_urls(request):
     urls = await get_all_urls(request.app["pool"])
