@@ -1,4 +1,6 @@
 aiohttp
 asyncpg
-aioredis
 jinja2
+bcrypt
+pyjwt
+redis>=4.2.0
